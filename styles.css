@@ -1,0 +1,249 @@
+:root {
+  --primary: #6c63ff; /* Morado moderno */
+  --secondary: #5649e6; 
+  --accent: #ff6584; /* Rosa */
+  --light: #f9f9ff; /* Fondo muy claro */
+  --dark: #212529; /* Texto oscuro */
+  --success: #4cc9f0; /* Azul claro */
+  --card-bg: #ffffff; /* Fondo de tarjetas */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* Reset moderno */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Container moderno */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Header estilizado */
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+header p {
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+/* Secciones con cards */
+.form-section {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.form-section:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Inputs modernos */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: #f8f9fa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+  background-color: white;
+}
+
+/* Radio buttons modernos */
+.scale-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scale-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.scale-options input[type="radio"] {
+  display: none;
+}
+
+.scale-options label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f3f5;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.scale-options input[type="radio"]:checked + label {
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+}
+
+/* Botones modernizados */
+.btn-submit {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-submit:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background: #f8f9fa;
+}
+
+/* Tabla moderna */
+#expensesTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+}
+
+#expensesTable th {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  position: sticky;
+  top: 0;
+}
+
+#expensesTable td {
+  padding: 1rem;
+  border-bottom: 1px solid #f1f3f5;
+  background: white;
+}
+
+#expensesTable tr:first-child td {
+  border-top: 1px solid #f1f3f5;
+}
+
+#expensesTable tr:hover td {
+  background: #f8f9fa;
+}
+
+#expensesTable.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Efectos y micro-interacciones */
+button {
+  transition: var(--transition);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .btn-submit, .btn-secondary {
+    width: 100%;
+  }
+}
